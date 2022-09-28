@@ -7,12 +7,12 @@ namespace u21437221_HW05.Models
 {
     public class Students
     {
-        public int StudentID { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public DateTime BirthDate { get; set; }
-        public string Gender { get; set; }
+        public int studentID { get; set; }
+        public string name { get; set; }
+        public string surname { get; set; }
+        public DateTime birthdate { get; set; }
+        public string gender { get; set; }
         public string Class { get; set; }
-        public int Point { get; set; }
+        public int point { get; set; }
     }
 }
