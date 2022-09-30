@@ -147,5 +147,15 @@ namespace u21437221_HW05.Models
             }
             return students;
         }
+
+        public void BorrowBook()
+        {
+
+        }
+
+        public void ReturnBook()
+        {
+
+        }
     }
 }

@@ -16,23 +16,20 @@ namespace u21437221_HW05.Controllers
             bookRecord = new BookRecords
             {
                 Book = dataService.GetAllBooks(),
-                Author = dataService.GetAllAuthors()
+                Author = dataService.GetAllAuthors(),
+                Type = dataService.GetAllTypes()
             };
             return View(bookRecord);
         }
 
-        public ActionResult About()
+        public ActionResult BookDetails()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            BookRecords borrows = null;
+            borrows = new BookRecords
+            {
+                Borrow = dataService.GetAllBorrows()
+            };
+            return View(borrows);
         }
     }
 }

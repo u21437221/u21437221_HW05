@@ -1,0 +1,32 @@
+﻿@model u21437221_HW05.Models.BookRecords
+@{
+    ViewBag.Title = "BookDetails";
+}
+
+<h2>BookDetails</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Taken Date</th>
+                    <th scope="col">Brought Date</th>
+                    <th scope="col">Borrowed By</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var borrowRecord in Model.Borrow)
+                {
+                    <tr>
+                        <td>@borrowRecord.borrowID</td>
+                        <td>@borrowRecord.takenDate</td>
+                        <td>@borrowRecord.broughtDate</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
