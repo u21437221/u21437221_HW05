@@ -11,6 +11,7 @@ namespace u21437221_HW05.Models
         public List<Authors> Author { get; set; }
         public List<Types> Type { get; set; }
         public List<Borrows> Borrow { get; set; }
+        public List<Students> Student { get; set; }
 
         public string GetAuthorOf(int authorID)
         {
@@ -21,6 +22,12 @@ namespace u21437221_HW05.Models
         public string GetTypeOf(int typeID)
         {
             List<Types> result = Type.Where(type => type.typeID == typeID).ToList();
+            return result.ToString();
+        }
+
+        public string GetStudentOf(int studentID)
+        {
+            List<Students> result = Student.Where(student => student.studentID == studentID).ToList();
             return result.ToString();
         }
     }

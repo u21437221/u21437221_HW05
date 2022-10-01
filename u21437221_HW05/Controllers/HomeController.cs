@@ -27,7 +27,8 @@ namespace u21437221_HW05.Controllers
             BookRecords borrows = null;
             borrows = new BookRecords
             {
-                Borrow = dataService.GetAllBorrows()
+                Borrow = dataService.GetAllBorrows(),
+                Student = dataService.GetAllStudents()
             };
             return View(borrows);
         }
