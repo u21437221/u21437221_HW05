@@ -5,6 +5,60 @@
 }
 
 <div class="row">
+    <br>
+    <div class="col-md-5">
+        <div class="input-group">
+            <input type="text" name="bookFilter" id="bookName"/>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Select a Type
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li>Science Fiction</li>
+                <li>Satire</li>
+                <li>Drama</li>
+                <li>Action and Advanture</li>
+                <li>Romance</li>
+                <li>Mystery</li>
+                <li>Horror</li>
+                <li>Health</li>
+                <li>Guide</li>
+                <li>Diaries</li>
+                <li>Comics</li>
+                <li>Diaries</li>
+                <li>Journals</li>
+                <li>Biographies</li>
+                <li>Fantasy</li>
+                <li>History</li>
+                <li>Science</li>
+                <li>Art</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Select a Author
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li>Howells</li>
+                <li>Brown</li>
+                <li>London</li>
+                <li>Blaisdell</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <button class="btn btn-success">@Html.ActionLink("Search", "FilterBooks","Home")</button>
+    </div>
+    <div class="col-md-5">
+        <button class="btn btn-danger">@Html.ActionLink("Clear", "ClearFilter", "Home")</button>
+    </div>
     <div class="col-md-12">
         <table class="table">
             <thead class="thead-dark">
@@ -27,6 +81,7 @@
                         <td>@Model.GetTypeOf(bookRecord.typeID)</td>
                         <td>@bookRecord.pagecount</td>
                         <td>@bookRecord.point</td>
+                        <td><button class="btn btn-primary">@Html.ActionLink("View", "GoToBookView","Home")</button></td>
                     </tr>
                 }
             </tbody>

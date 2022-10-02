@@ -1,0 +1,73 @@
+﻿@model u21437221_HW05.Models.BookRecords
+
+@{
+    ViewBag.Title = "ViewStudents";
+}
+
+<h2>ViewStudents</h2>
+
+<div class="row">
+    <br>
+    <div class="col-md-5">
+        <div class="input-group">
+            <input type="text" name="studentNameFilter" id="studentNameFilter" />
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="classFilter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Select a Class
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="classFilter">
+                <li>9A</li>
+                <li>9B</li>
+                <li>9C</li>
+                <li>9D</li>
+                <li>9E</li>
+                <li>10A</li>
+                <li>10B</li>
+                <li>10C</li>
+                <li>10D</li>
+                <li>10E</li>
+                <li>11A</li>
+                <li>11B</li>
+                <li>11C</li>
+                <li>11D</li>
+                <li>11E</li>
+                <li>12A</li>
+                <li>12B</li>
+                <li>12C</li>
+                <li>12D</li>
+                <li>12E</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Return Book</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model.Student)
+                {
+                    <tr>
+                        <td>@student.studentID</td>
+                        <td>@student.name</td>
+                        <td>@student.surname</td>
+                        <td>@student.Class</td>
+                        <td>@student.point</td>
+                        <td><button class="btn btn-primary" type="button">@Html.ActionLink("Return Book", "ReturnBook", "Home")</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

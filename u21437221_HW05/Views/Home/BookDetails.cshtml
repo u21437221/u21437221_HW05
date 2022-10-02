@@ -6,6 +6,10 @@
 <h2>BookDetails</h2>
 
 <div class="row">
+    <div class="col-md-2">
+        <h3>A Daughter of the Snows - Book Out</h3>
+        <button class="btn btn-primary">@Html.ActionLink("View Students", "GoToStudentsView", "Home")</button>
+    </div>
     <div class="col-md-12">
         <table class="table">
             <thead class="thead-dark">
@@ -19,12 +23,12 @@
             <tbody>
                 @foreach(var borrowRecord in Model.Borrow)
                 {
-                    <tr>
-                        <td>@borrowRecord.borrowID</td>
-                        <td>@borrowRecord.takenDate</td>
-                        <td>@borrowRecord.broughtDate</td>
-                        <td>@Model.GetStudentOf(borrowRecord.studentID)</td>
-                    </tr>
+                <tr>
+                    <td>@borrowRecord.borrowID</td>
+                    <td>@borrowRecord.takenDate</td>
+                    <td>@borrowRecord.broughtDate</td>
+                    <td>@Model.GetStudentOf(borrowRecord.studentID)</td>
+                </tr>
                 }
             </tbody>
         </table>
